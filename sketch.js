@@ -33,7 +33,7 @@ function setup() {
     var CenterBox = createSprite(770, 600, 200, 20);
     CenterBox.shapeColor = color(255, 0, 0);
     CenterBox.addImage(dust);
-    CenterBox.scale = 0.4;
+    CenterBox.scale = 0.7;
     
     strokeWeight(3);
     CenterBody = Bodies.rectangle(790, 600, 200, 20, options);
