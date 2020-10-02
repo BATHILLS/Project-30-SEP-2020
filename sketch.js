@@ -5,9 +5,10 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 var paper,ground1;
 var log1,log2,log3;
+var dust;
 function preload()
 {
-	
+	dust = loadImage("Trash-Can-PNG-Clipart.png")
 }
 
 function setup() {
@@ -29,24 +30,29 @@ function setup() {
       
     };
 
-    var CenterBox = createSprite(770, 650, 200, 20);
+    var CenterBox = createSprite(770, 600, 200, 20);
     CenterBox.shapeColor = color(255, 0, 0);
+    CenterBox.addImage(dust);
+    CenterBox.scale = 0.4;
     
     strokeWeight(3);
-    CenterBody = Bodies.rectangle(770, 635, 200, 20, options);
+    CenterBody = Bodies.rectangle(790, 600, 200, 20, options);
     World.add(world, CenterBody);
   
-    var RightBox = createSprite(870, 600, 20, 100);
+    var RightBox = createSprite(890, 550, 20, 100);
     RightBox.shapeColor = color(255, 0, 0);
+    RightBox.visible = false;
+
   
     strokeWeight(3);
-    RightBody = Bodies.rectangle(870, 600, 20, 100, options);
+    RightBody = Bodies.rectangle(890, 550, 20, 100, options);
     World.add(world, RightBody);
-    LeftBox = createSprite(670, 600, 20, 100);
+    LeftBox = createSprite(690, 600, 20, 100);
     LeftBox.shapeColor = color(255, 0, 0);
+    LeftBox.visible = false;
   
     strokeWeight(3);
-    LeftBody = Bodies.rectangle(670, 600, 20, 100, options);
+    LeftBody = Bodies.rectangle(690, 550, 20, 100, options);
     World.add(world, LeftBody);
 
 	Engine.run(engine);
